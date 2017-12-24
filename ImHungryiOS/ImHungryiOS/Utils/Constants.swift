@@ -7,3 +7,5 @@
 //
 
 import Foundation
+
+let url : String = "http://thormobileve.com/restaurants.json"
