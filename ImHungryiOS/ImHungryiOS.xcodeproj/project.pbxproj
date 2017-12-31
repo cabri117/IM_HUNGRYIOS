@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A51315D1FEFCE3700574788 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51315C1FEFCE3700574788 /* Repository.swift */; };
+		5A5131601FEFCEA600574788 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51315F1FEFCEA600574788 /* Constants.swift */; };
 		5AE890211FE019C5004C988F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890201FE019C5004C988F /* AppDelegate.swift */; };
 		5AE890231FE019C5004C988F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890221FE019C5004C988F /* ViewController.swift */; };
 		5AE890261FE019C5004C988F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE890241FE019C5004C988F /* Main.storyboard */; };
@@ -16,6 +18,7 @@
 		5AE890391FE019C5004C988F /* ImHungryiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890381FE019C5004C988F /* ImHungryiOSTests.swift */; };
 		5AE890441FE019C5004C988F /* ImHungryiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890431FE019C5004C988F /* ImHungryiOSUITests.swift */; };
 		78BDE23405D2C7AEE7A29641 /* Pods_ImHungryiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FAFF05F4D07AAB263A190FF /* Pods_ImHungryiOS.framework */; };
+		A28FB532FD5AA0E890812962 /* Pods_ImHungryiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA2E5FE4D64220D87A753ECB /* Pods_ImHungryiOSTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 /* Begin PBXFileReference section */
 		0FAFF05F4D07AAB263A190FF /* Pods_ImHungryiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImHungryiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE9194F368B9A165E79868E /* Pods-ImHungryiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHungryiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImHungryiOS/Pods-ImHungryiOS.release.xcconfig"; sourceTree = "<group>"; };
+		46DF85973C1B3E23F535BE88 /* Pods-ImHungryiOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHungryiOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImHungryiOSTests/Pods-ImHungryiOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		57ACD18EA69E512184ADBB29 /* Pods-ImHungryiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHungryiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ImHungryiOSTests/Pods-ImHungryiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A51315C1FEFCE3700574788 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		5A51315F1FEFCEA600574788 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5AE8901D1FE019C5004C988F /* ImHungryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImHungryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE890201FE019C5004C988F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE890221FE019C5004C988F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 		5AE8903F1FE019C5004C988F /* ImHungryiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImHungryiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE890431FE019C5004C988F /* ImHungryiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImHungryiOSUITests.swift; sourceTree = "<group>"; };
 		5AE890451FE019C5004C988F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA2E5FE4D64220D87A753ECB /* Pods_ImHungryiOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImHungryiOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC0AF13F2E25AC488018B8E /* Pods-ImHungryiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImHungryiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ImHungryiOS/Pods-ImHungryiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A28FB532FD5AA0E890812962 /* Pods_ImHungryiOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,8 +94,41 @@
 			isa = PBXGroup;
 			children = (
 				0FAFF05F4D07AAB263A190FF /* Pods_ImHungryiOS.framework */,
+				CA2E5FE4D64220D87A753ECB /* Pods_ImHungryiOSTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A5131591FEFCDA100574788 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5A51315A1FEFCDB000574788 /* ViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5A51315A1FEFCDB000574788 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5AE890221FE019C5004C988F /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5A51315B1FEFCDCF00574788 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				5A51315C1FEFCE3700574788 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		5A51315E1FEFCE9400574788 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A51315F1FEFCEA600574788 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5AE890141FE019C5004C988F = {
@@ -114,8 +156,10 @@
 		5AE8901F1FE019C5004C988F /* ImHungryiOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A51315E1FEFCE9400574788 /* Utils */,
+				5A51315B1FEFCDCF00574788 /* Repository */,
+				5A5131591FEFCDA100574788 /* Controllers */,
 				5AE890201FE019C5004C988F /* AppDelegate.swift */,
-				5AE890221FE019C5004C988F /* ViewController.swift */,
 				5AE890241FE019C5004C988F /* Main.storyboard */,
 				5AE8902A1FE019C5004C988F /* Assets.xcassets */,
 				5AE8902C1FE019C5004C988F /* LaunchScreen.storyboard */,
@@ -148,6 +192,8 @@
 			children = (
 				CFC0AF13F2E25AC488018B8E /* Pods-ImHungryiOS.debug.xcconfig */,
 				2CE9194F368B9A165E79868E /* Pods-ImHungryiOS.release.xcconfig */,
+				46DF85973C1B3E23F535BE88 /* Pods-ImHungryiOSTests.debug.xcconfig */,
+				57ACD18EA69E512184ADBB29 /* Pods-ImHungryiOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -179,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AE8904B1FE019C5004C988F /* Build configuration list for PBXNativeTarget "ImHungryiOSTests" */;
 			buildPhases = (
+				92787421A6AF271B9BD214B5 /* [CP] Check Pods Manifest.lock */,
 				5AE890301FE019C5004C988F /* Sources */,
 				5AE890311FE019C5004C988F /* Frameworks */,
 				5AE890321FE019C5004C988F /* Resources */,
+				19CDCB5F5ECC034C4CDEC2A9 /* [CP] Embed Pods Frameworks */,
+				A0AB4EAAE523572E55A833FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,6 +356,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImHungryiOS/Pods-ImHungryiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		19CDCB5F5ECC034C4CDEC2A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ImHungryiOSTests/Pods-ImHungryiOSTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImHungryiOSTests/Pods-ImHungryiOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		322C9E582C021A27012D4CA3 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +391,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImHungryiOS/Pods-ImHungryiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92787421A6AF271B9BD214B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImHungryiOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0AB4EAAE523572E55A833FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ImHungryiOSTests/Pods-ImHungryiOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DD86FDF951A9495F885874AC /* [CP] Check Pods Manifest.lock */ = {
@@ -337,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -347,9 +451,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A5131601FEFCEA600574788 /* Constants.swift in Sources */,
 				5AE890291FE019C5004C988F /* ImHungryiOS.xcdatamodeld in Sources */,
 				5AE890231FE019C5004C988F /* ViewController.swift in Sources */,
 				5AE890211FE019C5004C988F /* AppDelegate.swift in Sources */,
+				5A51315D1FEFCE3700574788 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +626,7 @@
 				DEVELOPMENT_TEAM = RDV2KJUFH7;
 				INFOPLIST_FILE = ImHungryiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.usj.ImHungryiOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -545,13 +652,15 @@
 		};
 		5AE8904C1FE019C5004C988F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46DF85973C1B3E23F535BE88 /* Pods-ImHungryiOSTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDV2KJUFH7;
 				INFOPLIST_FILE = ImHungryiOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.usj.ImHungryiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -562,8 +671,9 @@
 		};
 		5AE8904D1FE019C5004C988F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57ACD18EA69E512184ADBB29 /* Pods-ImHungryiOSTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RDV2KJUFH7;
@@ -585,6 +695,7 @@
 				DEVELOPMENT_TEAM = RDV2KJUFH7;
 				INFOPLIST_FILE = ImHungryiOSUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.usj.ImHungryiOSUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
