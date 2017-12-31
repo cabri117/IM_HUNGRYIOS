@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import ImHungryiOS
 
 class ImHungryiOSTests: XCTestCase {
@@ -31,6 +32,22 @@ class ImHungryiOSTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testAsyncRepository() {
+        let expect = expectation(description: "Testing")
+        Repository.getRestaurant {(response, error) in
+            if error != nil {
+                XCTFail((error?.localizedDescription)!)
+            } else {
+                XCTAssert(response!.count > 0, "No hay data")
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+        
     }
     
 }
