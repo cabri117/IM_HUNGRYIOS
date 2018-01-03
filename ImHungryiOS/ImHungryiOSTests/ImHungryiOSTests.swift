@@ -9,7 +9,7 @@
 import XCTest
 
 @testable import ImHungryiOS
-@testable import SwiftyJSON
+
 
 class ImHungryiOSTests: XCTestCase {
     
