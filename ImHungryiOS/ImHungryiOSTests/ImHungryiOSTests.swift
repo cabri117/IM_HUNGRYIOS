@@ -20,6 +20,7 @@ class ImHungryiOSTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        self.continueAfterFailure = false
     }
     
     override func tearDown() {
@@ -55,6 +56,7 @@ class ImHungryiOSTests: XCTestCase {
         
     }
     
+    /*Prueba Unitaria que guarda los datos de persistencia del core data...*/
     func testCoreDatasave() {
         
         guard let appDelegate =
@@ -90,6 +92,7 @@ class ImHungryiOSTests: XCTestCase {
         }
     }
     
+    /*Prueba Unitaria que trae los datos de persistencia del core data...Solo trae el nombre y deberia ser Daniel si lo ejecutas con testCoreDataSave*/
     func testCoreDatafetch() {
         guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
@@ -107,14 +110,45 @@ class ImHungryiOSTests: XCTestCase {
         //3
         do {
             restaurant = try managedContext.fetch(fetchRequest)
-            print("cuanta Data hay \(String(restaurant.count))")
+            
             XCTAssert(restaurant.count > 0, "No hay data")
+            print("cuanta Data hay \(String(restaurant.count))")
+            
+            
+            XCTAssertEqual(restaurant[0].value(forKey: "name") as? String, "Daniel", "No es igual a Daniel")
+            print(restaurant[0].value(forKey: "name") as? String! ?? " ")
             
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             XCTFail("Fallo")
         }
         
+    }
+    /*Prueba Unitaria que elimina toda la tabla de restaurantes de la persistencia de datos*/
+    func testCoreDataDelete() {
+        
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                XCTFail("Fallo")
+                return
+        }
+        
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        // Create Fetch Request
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurants")
+        
+        // Create Batch Delete Request
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.execute(batchDeleteRequest)
+            testCoreDatafetch()
+            
+        } catch {
+            // Error Handling
+            XCTFail("Fallo")
+        }
     }
     
 }

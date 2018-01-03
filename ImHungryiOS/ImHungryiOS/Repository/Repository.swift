@@ -10,14 +10,16 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
 class Repository {
+    
     
     class func getRestaurant(completionHandler: @escaping ([JSON]?, Error?) -> ()) {
         request(url, method: .get)
             .responseJSON { dataResponse in
+            
                 if dataResponse.error == nil {
                     if let array = JSON(dataResponse.data!).arrayValue as [JSON]?{
+                        
                         completionHandler(array , nil)
                     } else {
                         completionHandler(nil ,"Parse error" as? Error)
@@ -27,5 +29,4 @@ class Repository {
                 }
         }
     }
-    
 }
