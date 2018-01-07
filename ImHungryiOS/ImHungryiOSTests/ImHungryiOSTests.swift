@@ -58,6 +58,7 @@ class ImHungryiOSTests: XCTestCase {
     
     /*Testing del parseo*/
     func testParserRepository() {
+        
         let expect = expectation(description: "Testing")
         Parser.getRestaurant {(response, error) in
             if error != nil {
@@ -68,6 +69,48 @@ class ImHungryiOSTests: XCTestCase {
                 expect.fulfill()
             }
         }
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+        
+    }
+    
+    /*Prueba Unitaria que trae la data de los restaurantes...*/
+    func testParsergetRestaurantData()  {
+        let expect = expectation(description: "Testing")
+        Parser.getRestaurant {(response, error) in
+            if error != nil {
+                XCTFail((error?.localizedDescription)!)
+            } else {
+                guard let appDelegate =
+                    UIApplication.shared.delegate as? AppDelegate else {
+                        return
+                }
+                // 1
+                let managedContext =
+                    appDelegate.persistentContainer.viewContext
+                // 2
+                let entity =
+                    NSEntityDescription.entity(forEntityName: "Restaurants",
+                                               in: managedContext)!
+                
+                for restObj in response {
+                    let rest = NSManagedObject(entity: entity,
+                                               insertInto: managedContext)
+                    // 3
+                    rest.setValue(restObj.name, forKeyPath: "name")
+                    // 4
+                    do {
+                        try managedContext.save()
+                    } catch let error as NSError {
+                        print("Could not save. \(error), \(error.userInfo)")
+                    }
+                }
+                expect.fulfill()
+                
+            }
+        }
+        
         waitForExpectations(timeout: 10.0, handler: { (error) in
             print("Error: \(String(describing: error?.localizedDescription))")
         })
@@ -133,7 +176,7 @@ class ImHungryiOSTests: XCTestCase {
             print("cuanta Data hay \(String(restaurant.count))")
             
             
-            XCTAssertEqual(restaurant[0].value(forKey: "name") as? String, "Daniel", "No es igual a Daniel")
+            XCTAssertEqual(restaurant[0].value(forKey: "name") as? String, "Rio de la Plata", "No es igual a Rio de la Plata")
             print(restaurant[0].value(forKey: "name") as? String! ?? " ")
             
         } catch let error as NSError {
