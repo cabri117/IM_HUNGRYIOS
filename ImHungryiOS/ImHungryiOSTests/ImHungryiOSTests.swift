@@ -56,6 +56,24 @@ class ImHungryiOSTests: XCTestCase {
         
     }
     
+    /*Testing del parseo*/
+    func testParserRepository() {
+        let expect = expectation(description: "Testing")
+        Parser.getRestaurant {(response, error) in
+            if error != nil {
+                XCTFail((error?.localizedDescription)!)
+            } else {
+                XCTAssert(response.count > 0, "No hay data")
+                print(response[0].name)
+                expect.fulfill()
+            }
+        }
+        waitForExpectations(timeout: 10.0, handler: { (error) in
+            print("Error: \(String(describing: error?.localizedDescription))")
+        })
+        
+    }
+    
     /*Prueba Unitaria que guarda los datos de persistencia del core data...*/
     func testCoreDatasave() {
         

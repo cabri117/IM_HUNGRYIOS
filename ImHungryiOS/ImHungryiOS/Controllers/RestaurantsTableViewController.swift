@@ -33,7 +33,7 @@ class RestaurantsTableViewController: UITableViewController {
             } else {
                 for (subJson):(JSON) in response! {
                     // Do something you want
-                    let restaurant = Restaurant(name: subJson["name"].string!, description: subJson["description"].string!, thumbnail: subJson["thumbnail"].string!, rating: subJson["rating"].int!, address: subJson["address"].string!, phone: subJson["phone"].string!, latitude: subJson["latitude"].double!, longitude: subJson["latitude"].double!)
+                    let restaurant = Restaurant(name: subJson["name"].string!, description: subJson["description"].string!, thumbnail: subJson["thumbnail"].string!, rating: subJson["rating"].double!, address: subJson["address"].string!, phone: subJson["phone"].string!, latitude: subJson["latitude"].double!, longitude: subJson["latitude"].double!)
                     self.restaurants.append(restaurant)
                 }
                 self.tableView.reloadData()

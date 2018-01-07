@@ -10,7 +10,10 @@ import Foundation
 
 struct Restaurant: Codable {
     let name, description, thumbnail: String
-    let rating: Int
+    let rating: Double
     let address, phone: String
     let latitude, longitude: Double
 }
+
+
+
