@@ -10,7 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
 class Repository {
     
     class func getRestaurant(completionHandler: @escaping ([JSON]?, Error?) -> ()) {
@@ -27,5 +26,4 @@ class Repository {
                 }
         }
     }
-    
 }
