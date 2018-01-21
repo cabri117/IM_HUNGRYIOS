@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class RestaurantsTableViewController: UITableViewController {
 
-    var restaurants = [Restaurant]()
+    var restaurants : [Restaurant] = []
 //    {
 //        didSet {
 //            self.tableView.reloadData()
@@ -27,18 +27,30 @@ class RestaurantsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        Repository.getRestaurant {(response, error) in
+        //MARK DANIEL: CON ESTO TE TRAE LA DATA. LO HACE CON CORE DATA SI QUIERES HAZLO CON EL DIDSET COMO GUSTES
+        getRestaurantData { (response, error) in
+            if error == nil {
+                self.restaurants = response
+                print("Hay Data \(self.restaurants.count)")
+                
+            }
+        }
+        
+        
+        
+        //MARK:ESTO TE LO COMENTE
+        /*Repository.getRestaurant {(response, error) in
             if error != nil {
                 print("\(error.debugDescription)")
             } else {
                 for (subJson):(JSON) in response! {
                     // Do something you want
-                    let restaurant = Restaurant(name: subJson["name"].string!, description: subJson["description"].string!, thumbnail: subJson["thumbnail"].string!, rating: subJson["rating"].int!, address: subJson["address"].string!, phone: subJson["phone"].string!, latitude: subJson["latitude"].double!, longitude: subJson["latitude"].double!)
+                    let restaurant = Restaurant(name: subJson["name"].string!, description: subJson["description"].string!, thumbnail: subJson["thumbnail"].string!, rating: subJson["rating"].double!, address: subJson["address"].string!, phone: subJson["phone"].string!, latitude: subJson["latitude"].double!, longitude: subJson["latitude"].double!)
                     self.restaurants.append(restaurant)
                 }
                 self.tableView.reloadData()
             }
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {
