@@ -23,7 +23,14 @@ class RestaurantsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        //MARK DANIEL: CON ESTO TE TRAE LA DATA. LO HACE CON CORE DATA SI QUIERES HAZLO CON EL DIDSET COMO GUSTES
+        if !Connectivity.isConnectedToInternet() {
+            let alertController = UIAlertController(title: "", message:
+                "Actualmente no tienes conectividad a internet. Se mostrarán los últimos restaurantes guardados en su dispositivo.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
         getRestaurantData { (response, error) in
             if error == nil {
                 self.restaurants = response
