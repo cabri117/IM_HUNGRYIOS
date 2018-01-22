@@ -17,6 +17,8 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     var selectedRestaurant: Restaurant?
     var locationManager : CLLocationManager?
     
+    var dismissBlock: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +29,7 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
         let button = UIBarButtonItem(title: "OK", style: .plain, target: self, action: #selector(dismiss(_:)))
         button.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.blue], for: .normal)
         navigationItem.rightBarButtonItem = button
-
+        
         // Do any additional setup after loading the view.
         locationManager = CLLocationManager()
         locationManager?.requestWhenInUseAuthorization()
@@ -52,7 +54,9 @@ class RestaurantMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: - Pull To Dismiss ViewController
     @objc func dismiss(_: AnyObject?) {
-        
+        dismiss(animated: true) { [weak self] in
+            self?.dismissBlock?()
+        }
     }
     
     // MARK: - Maps
