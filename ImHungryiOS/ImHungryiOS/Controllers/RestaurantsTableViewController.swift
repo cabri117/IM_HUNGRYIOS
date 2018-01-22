@@ -42,6 +42,14 @@ class RestaurantsTableViewController: UITableViewController {
     }
     
     func loadRestaurants() {
+        if !Connectivity.isConnectedToInternet() {
+            let alertController = UIAlertController(title: "", message:
+                "Actualmente no tienes conectividad a internet. Se mostrarán los últimos restaurantes guardados en su dispositivo.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+      
         getRestaurantData { (response, error) in
             if error == nil {
                 self.restaurants = response
