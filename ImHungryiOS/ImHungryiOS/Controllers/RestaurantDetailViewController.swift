@@ -41,6 +41,8 @@ class RestaurantDetailViewController: UIViewController {
     
     func setUpViews() {
         
+        self.navigationController?.navigationBar.backItem?.title = "Regresar"
+        
         btnCall.layer.cornerRadius = 10
         btnCall.clipsToBounds = true
         

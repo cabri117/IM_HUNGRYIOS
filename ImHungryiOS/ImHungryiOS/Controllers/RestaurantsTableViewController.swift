@@ -26,11 +26,16 @@ class RestaurantsTableViewController: UITableViewController, UISearchBarDelegate
         tableView.refreshControl!.addTarget(self,
                                             action: #selector(refreshControlAction(_:)),
                                             for: .valueChanged)
+        
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Buscar restaurantes"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        let mapButton = UIBarButtonItem(title: "Mapa", style: .plain, target: self, action: #selector(mapAction(_:)))
+        self.navigationItem.rightBarButtonItem = mapButton
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,5 +107,14 @@ class RestaurantsTableViewController: UITableViewController, UISearchBarDelegate
             detailsViewController.restaurant = restaurants[indexPath!.row]
         }
         
+    }
+    
+    @objc func mapAction(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "mapViewController") as! RestaurantMapViewController
+        vc.restaurants = restaurants
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.present(nav, animated: true, completion: nil)
     }
 }
