@@ -59,6 +59,11 @@ class RestaurantsTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueDetails", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -95,14 +100,14 @@ class RestaurantsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let detailsViewController = segue.destination as! RestaurantDetailViewController
+        let indexPath = self.tableView.indexPathForSelectedRow
+        detailsViewController.restaurant = restaurants[indexPath!.row]
     }
-    */
-
 }
