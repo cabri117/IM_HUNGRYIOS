@@ -14,6 +14,7 @@ class HomeNavigationViewController: UINavigationController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "I'm Hungry";
     }
 
     override func didReceiveMemoryWarning() {

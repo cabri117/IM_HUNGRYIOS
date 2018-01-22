@@ -20,8 +20,8 @@ class RestaurantsTableViewCell: UITableViewCell {
             lblName.text = restaurant.name
             lblDistance.text = restaurant.phone
             
-            if let escapedString = restaurant.thumbnail.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) {
-               self.ivThumbnail.kf.setImage(with: URL(string: escapedString)!,
+            if  !restaurant.thumbnail.isEmpty {
+               self.ivThumbnail.kf.setImage(with: URL(string: restaurant.thumbnail)!,
                                                  placeholder: nil,
                                                  options: [.transition(.fade(1))],
                                                  progressBlock: nil,
@@ -29,6 +29,9 @@ class RestaurantsTableViewCell: UITableViewCell {
             } else {
                 self.ivThumbnail.image = UIImage(named: "AppIcon")!
             }
+            
+            self.ivThumbnail.layer.cornerRadius = self.ivThumbnail.frame.size.width / 2
+            self.ivThumbnail.clipsToBounds = true
         }
     }
     

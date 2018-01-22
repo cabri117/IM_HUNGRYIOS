@@ -12,15 +12,11 @@ import SwiftyJSON
 class RestaurantsTableViewController: UITableViewController {
 
     var restaurants : [Restaurant] = []
-//    {
-//        didSet {
-//            self.tableView.reloadData()
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "I'm Hungry"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,27 +28,13 @@ class RestaurantsTableViewController: UITableViewController {
             if error == nil {
                 self.restaurants = response
                 print("Hay Data \(self.restaurants.count)")
+                self.tableView.reloadData()
+            } else {
                 
             }
         }
-        
-        
-        
-        //MARK:ESTO TE LO COMENTE
-        /*Repository.getRestaurant {(response, error) in
-            if error != nil {
-                print("\(error.debugDescription)")
-            } else {
-                for (subJson):(JSON) in response! {
-                    // Do something you want
-                    let restaurant = Restaurant(name: subJson["name"].string!, description: subJson["description"].string!, thumbnail: subJson["thumbnail"].string!, rating: subJson["rating"].double!, address: subJson["address"].string!, phone: subJson["phone"].string!, latitude: subJson["latitude"].double!, longitude: subJson["latitude"].double!)
-                    self.restaurants.append(restaurant)
-                }
-                self.tableView.reloadData()
-            }
-        }*/
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -76,6 +58,11 @@ class RestaurantsTableViewController: UITableViewController {
         cell.restaurant = self.restaurants[(indexPath as NSIndexPath).row]
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueDetails", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*
@@ -113,14 +100,14 @@ class RestaurantsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let detailsViewController = segue.destination as! RestaurantDetailViewController
+        let indexPath = self.tableView.indexPathForSelectedRow
+        detailsViewController.restaurant = restaurants[indexPath!.row]
     }
-    */
-
 }
