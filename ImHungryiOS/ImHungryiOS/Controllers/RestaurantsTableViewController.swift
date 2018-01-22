@@ -96,6 +96,11 @@ class RestaurantsTableViewController: UITableViewController, UISearchBarDelegate
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let detailsViewController = segue.destination as! RestaurantDetailViewController
         let indexPath = self.tableView.indexPathForSelectedRow
-        detailsViewController.restaurant = restaurants[indexPath!.row]
+        if isFiltering() {
+            detailsViewController.restaurant = filteredRestaurants[indexPath!.row]
+        } else {
+            detailsViewController.restaurant = restaurants[indexPath!.row]
+        }
+        
     }
 }
