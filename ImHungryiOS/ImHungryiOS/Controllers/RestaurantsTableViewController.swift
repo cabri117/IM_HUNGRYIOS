@@ -9,19 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class RestaurantsTableViewController: UITableViewController {
+class RestaurantsTableViewController: UITableViewController, UISearchBarDelegate {
 
     var restaurants : [Restaurant] = []
+    var filteredRestaurants = [Restaurant]()
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "I'm Hungry"
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         loadRestaurants()
         
@@ -29,6 +26,11 @@ class RestaurantsTableViewController: UITableViewController {
         tableView.refreshControl!.addTarget(self,
                                             action: #selector(refreshControlAction(_:)),
                                             for: .valueChanged)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Buscar restaurantes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,14 +71,19 @@ class RestaurantsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if isFiltering() {
+            return filteredRestaurants.count
+        } 
         return restaurants.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RestaurantsTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: "RestaurantsCell", for: indexPath) as! RestaurantsTableViewCell
-        
-        cell.restaurant = self.restaurants[(indexPath as NSIndexPath).row]
+        if isFiltering() {
+            cell.restaurant = self.filteredRestaurants[(indexPath as NSIndexPath).row]
+        } else {
+            cell.restaurant = self.restaurants[(indexPath as NSIndexPath).row]
+        }
         
         return cell
     }
@@ -86,12 +93,7 @@ class RestaurantsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         let detailsViewController = segue.destination as! RestaurantDetailViewController
         let indexPath = self.tableView.indexPathForSelectedRow
         detailsViewController.restaurant = restaurants[indexPath!.row]

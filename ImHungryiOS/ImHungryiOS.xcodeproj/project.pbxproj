@@ -16,6 +16,7 @@
 		5A3A98B22002C0140029F5D3 /* RestaurantParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3A98B12002C0140029F5D3 /* RestaurantParser.swift */; };
 		5A51315D1FEFCE3700574788 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51315C1FEFCE3700574788 /* Repository.swift */; };
 		5A5131601FEFCEA600574788 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A51315F1FEFCEA600574788 /* Constants.swift */; };
+		5A6D5391201684E9001109B9 /* RestaurantsTableViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6D5390201684E9001109B9 /* RestaurantsTableViewController+Extension.swift */; };
 		5AE890211FE019C5004C988F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890201FE019C5004C988F /* AppDelegate.swift */; };
 		5AE890261FE019C5004C988F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AE890241FE019C5004C988F /* Main.storyboard */; };
 		5AE890291FE019C5004C988F /* ImHungryiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5AE890271FE019C5004C988F /* ImHungryiOS.xcdatamodeld */; };
@@ -58,6 +59,7 @@
 		5A3A98B12002C0140029F5D3 /* RestaurantParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantParser.swift; sourceTree = "<group>"; };
 		5A51315C1FEFCE3700574788 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		5A51315F1FEFCEA600574788 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5A6D5390201684E9001109B9 /* RestaurantsTableViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RestaurantsTableViewController+Extension.swift"; sourceTree = "<group>"; };
 		5AE8901D1FE019C5004C988F /* ImHungryiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImHungryiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE890201FE019C5004C988F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AE890251FE019C5004C988F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		5A6D538F201684D1001109B9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5A6D5390201684E9001109B9 /* RestaurantsTableViewController+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5AE890141FE019C5004C988F = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +198,7 @@
 		5AE8901F1FE019C5004C988F /* ImHungryiOS */ = {
 			isa = PBXGroup;
 			children = (
+				5A6D538F201684D1001109B9 /* Extension */,
 				5A3A98B02002BFED0029F5D3 /* Parser */,
 				251491EC1FFA77320024B21D /* Models */,
 				5A51315E1FEFCE9400574788 /* Utils */,
@@ -493,6 +504,7 @@
 				251491F01FFA856E0024B21D /* HomeNavigationViewController.swift in Sources */,
 				5AE890211FE019C5004C988F /* AppDelegate.swift in Sources */,
 				252CE9E320167C2600B4BAD7 /* Connectivity.swift in Sources */,
+				5A6D5391201684E9001109B9 /* RestaurantsTableViewController+Extension.swift in Sources */,
 				5A3A98B22002C0140029F5D3 /* RestaurantParser.swift in Sources */,
 				5A51315D1FEFCE3700574788 /* Repository.swift in Sources */,
 				251491F21FFA86050024B21D /* RestaurantsTableViewController.swift in Sources */,
