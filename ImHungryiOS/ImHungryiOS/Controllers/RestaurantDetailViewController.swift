@@ -18,6 +18,8 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var topDescription: NSLayoutConstraint!
     @IBOutlet weak var heightViewContainer: NSLayoutConstraint!
     
+    @IBOutlet weak var btnCall: UIButton!
+    @IBOutlet weak var btnMap: UIButton!
     
     var restaurant: Restaurant!
     
@@ -38,6 +40,12 @@ class RestaurantDetailViewController: UIViewController {
     }
     
     func setUpViews() {
+        
+        btnCall.layer.cornerRadius = 10
+        btnCall.clipsToBounds = true
+        
+        btnMap.layer.cornerRadius = 10
+        btnMap.clipsToBounds = true
         
         if restaurant == nil {
             return
@@ -61,7 +69,39 @@ class RestaurantDetailViewController: UIViewController {
         txtContent.text = restaurant.description
     }
     
-
+    @IBAction func onCallPressed(_ sender: Any) {
+        if restaurant == nil {
+            return
+        }
+        
+        if let url = URL(string: "tel://\(restaurant.phone)") {
+            openUrl(url: url)
+        }
+    }
+    
+    @IBAction func onMapPressed(_ sender: Any) {
+        
+        if restaurant == nil {
+            return
+        }
+        
+        let directionUrl = "http://maps.apple.com/?daddr=\(restaurant.latitude),\(restaurant.longitude)&dirflg=\(NAV_MODE)"
+        
+        if (UIApplication.shared.canOpenURL(URL(string:"http://maps.apple.com")!)) {
+            openUrl(url: URL(string: directionUrl)!)
+        } else {
+            NSLog("Can't use Apple Maps");
+        }
+    }
+    
+    func openUrl(url : URL) {
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

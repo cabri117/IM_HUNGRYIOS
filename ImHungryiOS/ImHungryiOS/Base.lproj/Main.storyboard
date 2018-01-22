@@ -15,7 +15,6 @@
         <array key="Helvetica.ttc">
             <string>Helvetica</string>
             <string>Helvetica-Bold</string>
-            <string>Helvetica-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -135,11 +134,37 @@
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSY-Uj-zgN">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUn-z1-7KT">
+                                                        <rect key="frame" x="315" y="120" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="MNE-J6-3Kv"/>
+                                                            <constraint firstAttribute="height" constant="50" id="Vru-O4-BSr"/>
+                                                        </constraints>
+                                                        <state key="normal" image="map"/>
+                                                        <connections>
+                                                            <action selector="onMapPressed:" destination="Nzm-iG-Hor" eventType="touchUpInside" id="nZk-mU-7Oz"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-xz-6Vr">
+                                                        <rect key="frame" x="245" y="120" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="4Bf-sZ-0fz"/>
+                                                            <constraint firstAttribute="width" constant="50" id="Nml-hB-EFr"/>
+                                                        </constraints>
+                                                        <state key="normal" image="call"/>
+                                                        <connections>
+                                                            <action selector="onCallPressed:" destination="Nzm-iG-Hor" eventType="touchUpInside" id="UVZ-3A-aYM"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="fh1-xz-6Vr" firstAttribute="centerY" secondItem="DUn-z1-7KT" secondAttribute="centerY" id="0Z9-1X-J1u"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DUn-z1-7KT" secondAttribute="trailing" constant="10" id="IsG-es-bBi"/>
                                                     <constraint firstAttribute="trailing" secondItem="hSY-Uj-zgN" secondAttribute="trailing" id="Knc-Iq-070"/>
                                                     <constraint firstAttribute="height" constant="180" id="N94-f6-ltA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="DUn-z1-7KT" secondAttribute="bottom" constant="10" id="PKt-30-EVe"/>
+                                                    <constraint firstItem="DUn-z1-7KT" firstAttribute="leading" secondItem="fh1-xz-6Vr" secondAttribute="trailing" constant="20" id="VTg-ct-g8W"/>
                                                     <constraint firstAttribute="bottom" secondItem="hSY-Uj-zgN" secondAttribute="bottom" id="hha-LG-Osp"/>
                                                     <constraint firstItem="hSY-Uj-zgN" firstAttribute="leading" secondItem="bPQ-C3-Gbm" secondAttribute="leading" id="mzx-jy-EQR"/>
                                                 </constraints>
@@ -147,13 +172,12 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2m-UN-iGB">
                                                 <rect key="frame" x="0.0" y="180" width="375" height="428"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-3M-eB4">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="CGG-3M-eB4">
                                                         <rect key="frame" x="52" y="31" width="303" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="43" id="vBX-lD-q3y"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="13"/>
-                                                        <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="n6B-XJ-xDg">
@@ -242,6 +266,8 @@
                         <barButtonItem key="backBarButtonItem" title="Regresar" id="ogD-aG-Tpv"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnCall" destination="fh1-xz-6Vr" id="h0S-qn-9fQ"/>
+                        <outlet property="btnMap" destination="DUn-z1-7KT" id="m10-ix-Gif"/>
                         <outlet property="heightViewContainer" destination="gAn-Cc-c3b" id="hAc-xh-6h0"/>
                         <outlet property="ivThumbnail" destination="hSY-Uj-zgN" id="1ja-ne-bp0"/>
                         <outlet property="lblSubTitle" destination="CGG-3M-eB4" id="HeI-NK-cwa"/>
@@ -256,6 +282,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="call" width="90" height="90"/>
+        <image name="map" width="90" height="90"/>
         <image name="restaurant" width="75" height="75"/>
     </resources>
 </document>
